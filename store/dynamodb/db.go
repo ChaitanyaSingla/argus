@@ -125,17 +125,6 @@ func NewDynamoDB(config Config, measures metric.Measures) (store.S, error) {
 			return nil, err
 		}
 
-		// value, err := sess.Config.Credentials.Get()
-		// if err != nil {
-		// 	return nil, err
-		// }
-
-		// creds = credentials.Value{
-		// 	AccessKeyID:     value.AccessKeyID,
-		// 	SecretAccessKey: value.SecretAccessKey,
-		// 	SessionToken:    value.SessionToken,
-		// }
-
 		awsConfig = *aws.NewConfig().
 			WithEndpoint(config.Endpoint).
 			WithUseDualStack(!config.DisableDualStack).
